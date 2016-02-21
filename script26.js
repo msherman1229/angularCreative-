@@ -2,8 +2,9 @@ var app = angular.module("app", []);
 app.controller("mainCtrl", mainCtrl); 
 
 function mainCtrl ($scope) {
+	$scope.logs = []; 
 	$scope.submitNew = function (newText) {
-		$scope.logs = [];
+		//$scope.logs = [];
 		$scope.logs.push({
 			userText: newText.submission 
 			});
@@ -17,19 +18,23 @@ function mainCtrl ($scope) {
 			dataType: 'json'
 		});
 		api_call.done(function(response) {
+			$scope.$apply(function() {
 			if (response.success) {
 				//Successful response 
 				var textResponse = response.message.message; 
 				console.log(textResponse);
+				$("<h1>" + textResponse + "</h1>").appendTo(".jumbotron"); 
 				$scope.logs.push({
 					userText: textResponse
 				});
+				 
 				 
 			} else {
 				//Unsuccessful, show error
 				console.log("ERROR"); 
 			}
-		});
+			})
+		})
 		
 		//In case the actual API call fails 
 		api_call.fail(function(jqXHR, textStatus) {
