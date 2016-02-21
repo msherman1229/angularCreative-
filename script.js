@@ -6,7 +6,8 @@ function mainCtrl ($scope) {
 	$scope.submitNew = function (newText) {
 		//$scope.logs = [];
 		$scope.logs.push({
-			userText: newText.submission 
+			userText: newText.submission, 
+			type: 0 
 			});
 		console.log(newText.submission);
 		//might want to generate a unique id each time, so that we aren't all the same speaker
@@ -18,14 +19,15 @@ function mainCtrl ($scope) {
 			dataType: 'json'
 		});
 		api_call.done(function(response) {
-			$scope.$apply(function() {
+			$scope.$apply(function() { //This tells angular to run the function and then check for changes in the scope, otherwise it won't know that it needs to update since this is being done through a jquery call 
 			if (response.success) {
 				//Successful response 
 				var textResponse = response.message.message; 
 				console.log(textResponse);
-				$("<h1>" + textResponse + "</h1>").appendTo(".jumbotron"); 
+				//$("<h1>" + textResponse + "</h1>").appendTo(".jumbotron"); 
 				$scope.logs.push({
-					userText: textResponse
+					userText: textResponse,
+					type: 1
 				});
 				 
 				 
