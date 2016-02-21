@@ -1,0 +1,30 @@
+<!Doctype HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Angular Project</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body ng-app="app" ng-controller="mainCtrl">
+<div class="jumbotron">
+<h1>Robot Chat</h1>
+</div>
+<form name="userForm" ng-submit="submitNew(userForm)" role="form">
+	<label for="submission">You:</label>
+	<input ng-model="userForm.submission" type="submission" class ="form-control" id="yourText">
+	<button type="submit" class="btn btn-default btn-lg">Submit</button>
+</form>
+<div ng-model="response">
+	<p>{{ response  }}</p>
+</div>
+<ul>
+	<li ng-repeat="log in logs">
+		<p>{{log.userText}}</p>
+	</li>
+</ul>
+<script src="script5.js"></script>
+</body>
+</html>
