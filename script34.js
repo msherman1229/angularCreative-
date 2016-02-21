@@ -10,6 +10,7 @@ function mainCtrl ($scope) {
 			type: 0 
 			});
 		console.log(newText.submission);
+		$("#yourText").val(''); 
 		//might want to generate a unique id each time, so that we aren't all the same speaker
 		//have them submit name and age or something and then I can use that as the key  
 		var urlCall = 'http://www.personalityforge.com/api/chat/?apiKey=OGolx9hVeyDkEkW5&chatBotID=2&message=' + newText.submission + '&externalID=abc-639184572'; 
