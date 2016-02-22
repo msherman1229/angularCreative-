@@ -2,7 +2,7 @@
 text-align: center;
 }
 table {
-border: 1px solid gray; 
+border-radius: 10px; 
 }
 body {
 background-image: url("http://www.planwallpaper.com/static/images/Fall-beautiful-nature-22666764-900-562.jpg");
@@ -11,6 +11,9 @@ background-size: cover;
 #myTable {
 background : white;
 }
-h1 {
+.main-header {
 color: white; 
+}
+#description {
+font-size: 20px;
 }
