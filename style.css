@@ -21,3 +21,9 @@ font-size: 20px;
 position: relative; 
 left: 15px; 
 }
+#table-header {
+font-size: 17px;
+}
+#submit-button {
+border-radius: 5px;
+}
