@@ -6,13 +6,15 @@ border-radius: 10px;
 }
 body {
 background-image: url("http://www.planwallpaper.com/static/images/Fall-beautiful-nature-22666764-900-562.jpg");
-background-size: cover; 
+background-size: cover;
+background-repeat: no-repeat; 
 }
 #myTable {
 background : white;
 }
 .main-header {
 color: white; 
+margin-right: 50px;
 }
 #description {
 font-size: 20px;

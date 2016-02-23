@@ -11,20 +11,20 @@
 <body ng-app="app" ng-controller="mainCtrl">
 <div class="page-header" id="topOfPage">
 <h1 class="main-header">Nature Chat</h1>
-<p class="main-header" id="description">Why go outside when you can just stay inside and chat with a robot who thinks you are on a nature hike IRL?</p>
+<p class="main-header" id="description">Why go outside when you can just stay inside and chat with a robot who thinks you are on a nature hike IRL? Just enter what is on your mind, maybe a simple "Hello" is a good place to start!</p>
 </div>
 <div class="container">
-<form name="userForm" ng-submit="submitNew(userForm)" role="form">
-	<div>
-	<div class="col-lg-4 col-lg-offset-4">
-<!--	<label for="submission">You:</label> -->
-	<input ng-model="userForm.submission" type="submission" class ="form-control" id="yourText" placeholder="What's on your mind?">
-	<span class="input-group-btn" id="submit-button">
-	<button type="submit" class="btn btn-default btn-lg" id="submit-button">Submit</button>
-	</span>
-	</div>
-	</div>
-</form>
+<table class="table" id="myTable">
+        <thead>
+                <tr>
+                        <th id="table-header">Chat Log</th>
+                </tr>
+        </thead>
+        <tbody>
+                <tr ng-repeat="log in logs" ng-class="{'info' : log.type > 0}">
+                        <td>{{log.userText}}</td>
+                </tr>
+</table>
 </div>
 <!--
 <ul>
@@ -36,17 +36,17 @@
 <br>
 <br>
 <div class="container">
-<table class="table" id="myTable">
-	<thead>
-		<tr>
-			<th id="table-header">Chat Log</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="log in logs" ng-class="{'info' : log.type > 0}">
-			<td>{{log.userText}}</td>
-		</tr>
-</table>
+<form name="userForm" ng-submit="submitNew(userForm)" role="form">
+        <div>
+        <div class="col-lg-4 col-lg-offset-4">
+<!--    <label for="submission">You:</label> -->
+        <input ng-model="userForm.submission" type="submission" class ="form-control" id="yourText" placeholder="What's on your mind?">
+        <span class="input-group-btn" id="submit-button">
+        <button type="submit" class="btn btn-default btn-lg" id="submit-button">Submit</button>
+        </span>
+        </div>
+        </div>
+</form>
 </div>
 <script src="script16.js"></script>
 </body>
